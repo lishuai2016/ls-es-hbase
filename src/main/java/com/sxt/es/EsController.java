@@ -33,7 +33,7 @@ public class EsController {
 	public String serachArticle(Model model,
 			@RequestParam(value="keyWords",required = false) String keyWords,
 			@RequestParam(value = "pageNum", defaultValue = "1") Integer pageNum,
-			@RequestParam(value = "pageSize", defaultValue = "3") Integer pageSize){
+			@RequestParam(value = "pageSize", defaultValue = "20") Integer pageSize){
 		try {
 			keyWords = new String(keyWords.getBytes("ISO-8859-1"),"UTF-8");
 		} catch (UnsupportedEncodingException e) {

@@ -43,7 +43,7 @@ public class HbaseUtils {
 	 */
 	public HbaseUtils() {
 		Configuration conf = HBaseConfiguration.create();
-		conf.set("hbase.zookeeper.quorum","master,slave1,slave2");
+		conf.set("hbase.zookeeper.quorum","master.hadoop,slave1.hadoop,slave2.hadoop");
 		try {
 			conn = ConnectionFactory.createConnection(conf);
 			admin = conn.getAdmin();
@@ -54,9 +54,9 @@ public class HbaseUtils {
 	public static void main(String[] args) throws Exception {
 		HbaseUtils hbase = new HbaseUtils();
 		//创建一张表
-//		hbase.createTable("stu10","cf");
+		hbase.createTable("doc","cf1");
 //		//查询所有表名
-		hbase.getALLTable();
+//		hbase.getALLTable();
 //		//往表中添加一条记录
 //		hbase.put(hbase.TABLE_NAME, "1", hbase.COLUMNFAMILY_1, hbase.COLUMNFAMILY_1_AUTHOR, "sxt");
 //		hbase.addOneRecord("stu","key1","cf","age","24");
